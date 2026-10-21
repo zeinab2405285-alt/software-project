@@ -1,0 +1,14 @@
+/* auth.css - login / register / forgot / reset pages (uses the same design tokens) */
+.auth-page { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%); }
+.auth-card { width: min(440px, 100%); background: #fff; border-radius: var(--radius-lg); padding: 32px; box-shadow: 0 25px 80px #102b3b55; }
+.auth-brand { display: flex; align-items: center; gap: 11px; margin-bottom: 22px; }
+.auth-brand .brand-mark { width: 39px; height: 39px; border-radius: 12px; background: var(--teal); display: grid; place-items: center; font-size: 23px; font-weight: 800; color: #fff; }
+.auth-brand strong { color: var(--navy); font-size: 16px; }
+.auth-card h1 { margin: 0 0 6px; font-size: 22px; color: var(--navy); }
+.auth-card > p { margin: 0 0 22px; color: var(--muted); font-size: 13px; }
+.auth-form { display: grid; gap: 16px; }
+.auth-form .btn { width: 100%; padding: 12px; font-size: 13px; }
+.password-toggle { justify-self: start; padding: 0; border: 0; background: none; color: var(--teal); font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+.auth-links { display: flex; justify-content: space-between; margin-top: 18px; font-size: 12px; }
+.auth-links a { color: var(--teal); font-weight: 700; text-decoration: none; }
+.auth-links a:hover { text-decoration: underline; }
