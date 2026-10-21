@@ -1,0 +1,22 @@
+/* variables.css - design tokens shared by the whole SIS site */
+:root {
+  --navy: #153d52;
+  --navy2: #1e5269;
+  --teal: #16a6a1;
+  --teal-dark: #118d89;
+  --ink: #1d2d38;
+  --muted: #71808b;
+  --bg: #f5f8fa;
+  --white: #ffffff;
+  --line: #e4ebef;
+  --green: #16865f;
+  --red: #c74b52;
+  --amber: #b7791f;
+  --shadow: 0 8px 24px rgba(24, 53, 70, 0.06);
+  --sidebar-width: 248px;
+  --topbar-height: 92px;
+  --radius-sm: 8px;
+  --radius-md: 13px;
+  --radius-lg: 15px;
+  --font-main: Inter, "Segoe UI", Arial, sans-serif;
+}
