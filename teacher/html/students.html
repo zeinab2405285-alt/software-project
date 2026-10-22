@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Students | Campus SIS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-mark">S</div>
+            <div><strong>Campus SIS</strong><small>Teacher portal</small></div>
+        </div>
+        <div class="nav-label">MENU</div>
+        <nav>
+            <a class="nav-item" href="dashboard.html"><span>🏠</span>Dashboard</a>
+            <a class="nav-item" href="courses.html"><span>📚</span>My courses</a>
+            <a class="nav-item active" href="students.html"><span>👥</span>Students</a>
+            <a class="nav-item" href="grades.html"><span>📝</span>Enter grades</a>
+            <a class="nav-item" href="attendance.html"><span>✅</span>Take attendance</a>
+            <a class="nav-item" href="announcements.html"><span>📢</span>Announcements</a>
+            <a class="nav-item" href="notifications.html"><span>🔔</span>Notifications</a>
+            <a class="nav-item" href="profile.html"><span>👤</span>My profile</a>
+            <a class="nav-item logout" href="login.html"><span>🚪</span>Log out</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="admin-avatar">MR</div>
+            <div class="admin-details">
+                <strong>Eng. Mohamed shalaby</strong>
+                <small>Instructor</small>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-area">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button>
+                <div>
+                    <div class="eyebrow">TEACHER PORTAL</div>
+                    <h1>Students</h1>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span class="today" id="today"></span>
+                <div class="top-avatar">MR</div>
+            </div>
+        </header>
+
+        <div class="page-content">
+
+            <div class="panel">
+                <div class="toolbar">
+                    <select id="course">
+                        <option value="CS220">CS220 Databases</option>
+                        <option value="CS201">CS201 Data Structures</option>
+                    </select>
+                    <div class="search-box">
+                        <span>🔍</span>
+                        <input type="text" id="search" placeholder="Search by name or ID">
+                    </div>
+                </div>
+
+                <div class="table-heading">
+                    <h3>Course students</h3>
+                    <small id="count"></small>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>ID</th><th>Name</th><th>Email</th><th>Attendance</th><th>Current total</th></tr>
+                        </thead>
+                        <tbody id="list"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer>Campus SIS <span>|</span> Teacher portal</footer>
+    </div>
+
+</div>
+<script src="js/layout.js"></script>
+<script src="js/students.js"></script>
+</body>
+</html>

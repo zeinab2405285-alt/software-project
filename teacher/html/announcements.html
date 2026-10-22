@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Announcements | Campus SIS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-mark">S</div>
+            <div><strong>Campus SIS</strong><small>Teacher portal</small></div>
+        </div>
+        <div class="nav-label">MENU</div>
+        <nav>
+            <a class="nav-item" href="dashboard.html"><span>🏠</span>Dashboard</a>
+            <a class="nav-item" href="courses.html"><span>📚</span>My courses</a>
+            <a class="nav-item" href="students.html"><span>👥</span>Students</a>
+            <a class="nav-item" href="grades.html"><span>📝</span>Enter grades</a>
+            <a class="nav-item" href="attendance.html"><span>✅</span>Take attendance</a>
+            <a class="nav-item active" href="announcements.html"><span>📢</span>Announcements</a>
+            <a class="nav-item" href="notifications.html"><span>🔔</span>Notifications</a>
+            <a class="nav-item" href="profile.html"><span>👤</span>My profile</a>
+            <a class="nav-item logout" href="login.html"><span>🚪</span>Log out</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="admin-avatar">MR</div>
+            <div class="admin-details">
+                <strong>Eng. Malak Rezk</strong>
+                <small>Instructor</small>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-area">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button>
+                <div>
+                    <div class="eyebrow">TEACHER PORTAL</div>
+                    <h1>Announcements</h1>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span class="today" id="today"></span>
+                <div class="top-avatar">MR</div>
+            </div>
+        </header>
+
+        <div class="page-content">
+
+            <div id="message" class="box success" style="display: none;"></div>
+
+            <div class="dashboard-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>New announcement</h3>
+                            <p>Students will get a notification</p>
+                        </div>
+                    </div>
+
+                    <label>Send to</label>
+                    <select id="course">
+                        <option>CS220 Databases</option>
+                        <option>CS201 Data Structures</option>
+                        <option>All my students</option>
+                    </select>
+
+                    <label>Title</label>
+                    <input type="text" id="title">
+
+                    <label>Message</label>
+                    <textarea id="text" rows="5"></textarea>
+
+                    <label>Deadline (optional)</label>
+                    <input type="date" id="deadline">
+
+                    <button class="btn btn-primary" id="sendBtn">Send announcement</button>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Sent announcements</h3>
+                            <p>Your latest messages</p>
+                        </div>
+                    </div>
+                    <div id="list">
+                        <div class="note">
+                            <h3>Databases lecture moved</h3>
+                            <p>Thursday lecture moves to Hall B, same time.</p>
+                            <small>CS220 Databases - 9 Oct</small>
+                        </div>
+                        <div class="note">
+                            <h3>Assignment 2 deadline</h3>
+                            <p>Please submit before Sunday midnight.</p>
+                            <small>CS201 Data Structures - 5 Oct</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>Campus SIS <span>|</span> Teacher portal</footer>
+    </div>
+
+</div>
+<script src="js/layout.js"></script>
+<script src="js/announcements.js"></script>
+</body>
+</html>
