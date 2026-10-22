@@ -1,8 +1,0 @@
-/* Forms & validation */
-.form-card{max-width:820px}
-.req{color:var(--red)}
-input.invalid,select.invalid,textarea.invalid{border-color:var(--red);box-shadow:0 0 0 3px #ffeded}
-.field-error{color:var(--red);font-size:10px;font-weight:600;min-height:12px;display:block}
-input[readonly]{background:#f3f7f9;color:var(--muted)}
-.form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
-.form-error-banner{background:#ffeded;border:1px solid #f5c6c9;color:#a8343b;padding:12px;border-radius:8px;font-size:12px;margin-bottom:16px}
