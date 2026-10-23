@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIS | Admin Profile</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        :root {
+            --admin-teal: #19a5a0;
+            --admin-dark: #173f52;
+            --admin-bg: #f3f7fa;
+            --admin-text: #29485a;
+            --admin-muted: #7c8995;
+            --admin-border: #dfe6eb;
+        }
+
+        body {
+            background: var(--admin-bg);
+            color: var(--admin-text);
+        }
+
+        .profile-sidebar {
+            background: var(--admin-dark);
+        }
+
+        .profile-sidebar .brand,
+        .profile-sidebar .nav-label {
+            color: #e7f4f7;
+        }
+
+        .profile-sidebar .nav-item {
+            color: #c4d5df;
+            border-radius: 9px;
+            margin: 4px 0;
+            transition: background .2s, color .2s;
+        }
+
+        .profile-sidebar .nav-item:hover {
+            background: rgba(255,255,255,.09);
+            color: white;
+        }
+
+        .profile-sidebar .nav-item.active {
+            background: #e8f7f7;
+            color: var(--admin-dark);
+            font-weight: 700;
+        }
+
+        .profile-sidebar .sidebar-bottom {
+            border-top: 1px solid rgba(255,255,255,.15);
+        }
+
+        .profile-sidebar .admin-details strong {
+            color: white;
+        }
+
+        .profile-sidebar .admin-details small {
+            color: #b8ced8;
+        }
+
+        .profile-main {
+            min-width: 0;
+        }
+
+        .profile-topbar {
+            background: white;
+            border-bottom: 1px solid #edf0f3;
+        }
+
+        .profile-topbar h1 {
+            margin: 4px 0 0;
+            font-size: 26px;
+            color: #173f52;
+        }
+
+        .profile-eyebrow {
+            color: var(--admin-teal);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .profile-content {
+            padding: 30px 36px;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(320px, .9fr);
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .profile-card {
+            background: white;
+            border: 1px solid #e8edf1;
+            border-radius: 17px;
+            padding: 25px 21px;
+            box-shadow: 0 5px 18px rgba(29, 58, 75, .035);
+            min-width: 0;
+        }
+
+        .profile-card-header {
+            margin-bottom: 20px;
+        }
+
+        .profile-card-header h2 {
+            font-size: 16px;
+            color: #244658;
+            margin: 0 0 7px;
+        }
+
+        .profile-card-header p {
+            font-size: 12px;
+            color: var(--admin-muted);
+            margin: 0;
+        }
+
+        .profile-form label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #526573;
+            margin: 15px 0 7px;
+        }
+
+        .profile-form input {
+            box-sizing: border-box;
+            width: 100%;
+            min-height: 41px;
+            border: 1px solid var(--admin-border);
+            border-radius: 10px;
+            background: white;
+            padding: 10px 12px;
+            color: #354c5a;
+            font: inherit;
+            font-size: 13px;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s;
+        }
+
+        .profile-form input:focus {
+            border-color: var(--admin-teal);
+            box-shadow: 0 0 0 3px rgba(25, 165, 160, .12);
+        }
+
+        .profile-form input:disabled {
+            background: #f5f7f9;
+            color: #72818b;
+            cursor: not-allowed;
+        }
+
+        .profile-button {
+            border: 0;
+            border-radius: 10px;
+            padding: 11px 17px;
+            margin-top: 15px;
+            background: var(--admin-teal);
+            color: white;
+            font-size: 12px;
+            font-weight: 750;
+            cursor: pointer;
+            transition: background .2s, transform .2s;
+        }
+
+        .profile-button:hover {
+            background: #138d89;
+            transform: translateY(-1px);
+        }
+
+        .profile-message {
+            display: none;
+            padding: 12px 14px;
+            border-radius: 9px;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .profile-message.success {
+            display: block;
+            background: #e8f7ee;
+            color: #217447;
+        }
+
+        .profile-message.error {
+            display: block;
+            background: #fff0f0;
+            color: #b42318;
+        }
+
+        .profile-avatar {
+            width: 41px;
+            height: 41px;
+            border-radius: 50%;
+            background: #e5f5f4;
+            color: #287c7a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 12px;
+        }
+
+        .profile-identity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .profile-footer {
+            padding: 16px 36px;
+            color: #85919b;
+            font-size: 12px;
+        }
+
+        .profile-footer span {
+            margin: 0 6px;
+            color: var(--admin-teal);
+        }
+
+        @media (max-width: 1000px) {
+            .profile-content {
+                padding: 22px;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .profile-content {
+                padding: 15px;
+            }
+
+            .profile-card {
+                padding: 20px 16px;
+            }
+
+            .profile-topbar h1 {
+                font-size: 22px;
+            }
+
+            .profile-footer {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="app-shell">
+
+    <aside class="sidebar profile-sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-mark">S</div>
+            <div>
+                <strong>Campus SIS</strong>
+                <small>Administration</small>
+            </div>
+        </div>
+
+        <div class="nav-label">WORKSPACE</div>
+
+        <nav id="main-nav">
+            <a class="nav-item" href="index.html">
+                <span>▦</span> Dashboard
+            </a>
+            <a class="nav-item" href="index.html#students">
+                <span>♙</span> Students
+            </a>
+            <a class="nav-item" href="index.html#teachers">
+                <span>♧</span> Teachers
+            </a>
+            <a class="nav-item" href="index.html#courses">
+                <span>▤</span> Courses
+            </a>
+            <a class="nav-item" href="index.html#enrollments">
+                <span>⇄</span> Enrollments
+            </a>
+            <a class="nav-item" href="index.html#academics">
+                <span>✓</span> Grades & Attendance
+            </a>
+            <a class="nav-item" href="index.html#reports">
+                <span>▥</span> Reports
+            </a>
+            <a class="nav-item" href="index.html#announcements">
+                <span>◉</span> Announcements
+            </a>
+            <a class="nav-item active" href="profile.html">
+                <span>♟</span> My profile
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="admin-avatar" id="sidebar-avatar">AD</div>
+            <div class="admin-details">
+                <strong id="sidebar-name">Administrator</strong>
+                <small>System Admin</small>
+            </div>
+            <button id="logout-btn" class="icon-button" title="Sign out">↪</button>
+        </div>
+    </aside>
+
+    <main class="main-area profile-main">
+
+        <header class="topbar profile-topbar">
+            <div class="topbar-left">
+                <button id="menu-toggle"
+                        class="icon-button mobile-menu"
+                        aria-label="Toggle menu">☰</button>
+
+                <div>
+                    <div class="profile-eyebrow">
+                        STUDENT INFORMATION SYSTEM
+                    </div>
+                    <h1>My profile</h1>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+                <span class="today" id="today-label"></span>
+                <div class="profile-avatar" id="top-avatar">AD</div>
+            </div>
+        </header>
+
+        <section class="page-content profile-content">
+
+            <div id="message" class="profile-message" role="status"></div>
+
+            <div class="profile-grid">
+
+                <!-- Personal information -->
+                <section class="profile-card">
+                    <div class="profile-card-header">
+                        <h2>Personal information</h2>
+                        <p>Update your contact details</p>
+                    </div>
+
+                    <div class="profile-form">
+                        <label for="name">Full name</label>
+                        <input type="text" id="name"
+                               placeholder="Enter your full name"
+                               autocomplete="name">
+
+                        <label for="admin-id">Administrator ID</label>
+                        <input type="text" id="admin-id"
+                               value="System Administrator" disabled>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email"
+                               placeholder="Enter your email"
+                               autocomplete="email">
+
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone"
+                               placeholder="Enter your phone number"
+                               autocomplete="tel">
+
+                        <label for="department">Department</label>
+                        <input type="text" id="department"
+                               value="Administration" disabled>
+
+                        <button class="profile-button" id="saveBtn">
+                            Save changes
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Change password -->
+                <section class="profile-card">
+                    <div class="profile-card-header">
+                        <h2>Change password</h2>
+                        <p>Use at least 8 characters</p>
+                    </div>
+
+                    <div class="profile-form">
+                        <label for="oldPass">Current password</label>
+                        <input type="password" id="oldPass"
+                               autocomplete="current-password">
+
+                        <label for="newPass">New password</label>
+                        <input type="password" id="newPass"
+                               autocomplete="new-password">
+
+                        <label for="confirmPass">Confirm new password</label>
+                        <input type="password" id="confirmPass"
+                               autocomplete="new-password">
+
+                        <button class="profile-button" id="passBtn">
+                            Change password
+                        </button>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+        <footer class="profile-footer">
+            Student Information System
+            <span>•</span>
+            Admin workspace
+        </footer>
+
+    </main>
+</div>
+
+<script src="js/admin-profile.js"></script>
+</body>
+</html>
