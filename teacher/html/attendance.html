@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Take attendance | Campus SIS</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/teacher.css">
+</head>
+<body>
+<div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-mark">S</div>
+            <div><strong>Campus SIS</strong><small>Teacher portal</small></div>
+        </div>
+        <div class="nav-label">MENU</div>
+        <nav>
+            <a class="nav-item" href="dashboard.html"><span>🏠</span>Dashboard</a>
+            <a class="nav-item" href="courses.html"><span>📚</span>My courses</a>
+            <a class="nav-item" href="students.html"><span>👥</span>Students</a>
+            <a class="nav-item" href="grades.html"><span>📝</span>Enter grades</a>
+            <a class="nav-item active" href="attendance.html"><span>✅</span>Take attendance</a>
+            <a class="nav-item" href="announcements.html"><span>📢</span>Announcements</a>
+            <a class="nav-item" href="notifications.html"><span>🔔</span>Notifications</a>
+            <a class="nav-item" href="profile.html"><span>👤</span>My profile</a>
+            <a class="nav-item logout" href="../../auth/login.html" id="logoutLink"><span>🚪</span>Log out</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="admin-avatar">MR</div>
+            <div class="admin-details">
+                <strong>Eng. Mohamed shalaby</strong>
+                <small>Instructor</small>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-area">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button>
+                <div>
+                    <div class="eyebrow">TEACHER PORTAL</div>
+                    <h1>Take attendance</h1>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span class="today" id="today"></span>
+                <div class="top-avatar">MR</div>
+            </div>
+        </header>
+
+        <div class="page-content">
+
+            <div id="message" class="box success" style="display: none;"></div>
+
+            <div class="panel">
+                <div class="toolbar">
+                    <select>
+                        <option>CS220 Databases</option>
+                        <option>CS201 Data Structures</option>
+                    </select>
+                    <input type="date" id="date" style="width: auto;">
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Student</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mariam Bakr</td>
+                                <td>
+                                    <select class="status-select">
+                                        <option>Present</option>
+                                        <option>Late</option>
+                                        <option>Absent</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ali Ahmed</td>
+                                <td>
+                                    <select class="status-select">
+                                        <option>Present</option>
+                                        <option>Late</option>
+                                        <option>Absent</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Zeinab Hany</td>
+                                <td>
+                                    <select class="status-select">
+                                        <option>Present</option>
+                                        <option>Late</option>
+                                        <option>Absent</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Omar Khaled</td>
+                                <td>
+                                    <select class="status-select">
+                                        <option>Present</option>
+                                        <option>Late</option>
+                                        <option>Absent</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Nour Samy</td>
+                                <td>
+                                    <select class="status-select">
+                                        <option>Present</option>
+                                        <option>Late</option>
+                                        <option>Absent</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Salma Tarek</td>
+                                <td>
+                                    <select class="status-select">
+                                        <option>Present</option>
+                                        <option>Late</option>
+                                        <option>Absent</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" id="saveBtn">Save attendance</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>Campus SIS <span>|</span> Teacher portal</footer>
+    </div>
+
+</div>
+<script src="../js/layout.js"></script>
+<script src="../js/attendance.js"></script>
+</body>
+</html>

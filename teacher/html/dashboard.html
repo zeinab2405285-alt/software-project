@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Campus SIS</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/teacher.css">
+</head>
+<body>
+<div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-mark">S</div>
+            <div><strong>Campus SIS</strong><small>Teacher portal</small></div>
+        </div>
+        <div class="nav-label">MENU</div>
+        <nav>
+            <a class="nav-item active" href="dashboard.html"><span>🏠</span>Dashboard</a>
+            <a class="nav-item" href="courses.html"><span>📚</span>My courses</a>
+            <a class="nav-item" href="students.html"><span>👥</span>Students</a>
+            <a class="nav-item" href="grades.html"><span>📝</span>Enter grades</a>
+            <a class="nav-item" href="attendance.html"><span>✅</span>Take attendance</a>
+            <a class="nav-item" href="announcements.html"><span>📢</span>Announcements</a>
+            <a class="nav-item" href="notifications.html"><span>🔔</span>Notifications</a>
+            <a class="nav-item" href="profile.html"><span>👤</span>My profile</a>
+            <a class="nav-item logout" href="../../auth/login.html" id="logoutLink"><span>🚪</span>Log out</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="admin-avatar">MR</div>
+            <div class="admin-details">
+                <strong>Eng. Mohamed shalaby</strong>
+                <small>Instructor</small>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-area">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button>
+                <div>
+                    <div class="eyebrow">TEACHER PORTAL</div>
+                    <h1>Dashboard</h1>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span class="today" id="today"></span>
+                <div class="top-avatar">MR</div>
+            </div>
+        </header>
+
+        <div class="page-content">
+
+            <div class="welcome-row">
+                <div>
+                    <h2>Welcome back, Eng. Mohamed shalaby</h2>
+                    <p>Here is a quick look at your courses today.</p>
+                </div>
+                <a class="btn btn-primary" href="attendance.html">Take attendance</a>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-top"><span>Courses teaching</span><div class="stat-icon">📚</div></div>
+                    <div class="stat-number">2</div>
+                    <div class="stat-foot">This semester</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top"><span>Students</span><div class="stat-icon">👥</div></div>
+                    <div class="stat-number">68</div>
+                    <div class="stat-foot">In all your courses</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top"><span>Grades waiting</span><div class="stat-icon">📝</div></div>
+                    <div class="stat-number">14</div>
+                    <div class="stat-foot">Need to be entered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top"><span>Average attendance</span><div class="stat-icon">✅</div></div>
+                    <div class="stat-number">86%</div>
+                    <div class="stat-foot"><b>+2%</b> from last week</div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Today's schedule</h3>
+                            <p>Your lectures for today</p>
+                        </div>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr><th>Time</th><th>Course</th><th>Room</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>10:00</td><td><b>CS220</b> Databases</td><td>Hall B</td></tr>
+                                <tr><td>13:00</td><td><b>CS201</b> Data Structures</td><td>Lab 3</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Quick actions</h3>
+                            <p>Jump to a common task</p>
+                        </div>
+                    </div>
+                    <div class="quick-grid">
+                        <a class="quick-action" href="grades.html"><span class="qa-icon">📝</span><strong>Enter grades</strong><small>Add student marks</small></a>
+                        <a class="quick-action" href="attendance.html"><span class="qa-icon">✅</span><strong>Take attendance</strong><small>Mark who is present</small></a>
+                        <a class="quick-action" href="announcements.html"><span class="qa-icon">📢</span><strong>Announcement</strong><small>Message your students</small></a>
+                        <a class="quick-action" href="students.html"><span class="qa-icon">👥</span><strong>Students</strong><small>See each course list</small></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>Campus SIS <span>|</span> Teacher portal</footer>
+    </div>
+
+</div>
+<script src="../js/layout.js"></script>
+</body>
+</html>
