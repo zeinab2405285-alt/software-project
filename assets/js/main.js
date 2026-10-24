@@ -2,7 +2,7 @@
 const SIS = (function () {
   // The only built-in account. Teachers and students must register first.
   const ADMIN_USER = { name: "Admin User", email: "admin@sis.edu", password: "Admin@123", role: "admin" };
-  const ROLE_HOME = { admin: "../admin/dashboard.html", teacher: "../teacher/dashboard.html", student: "../student/dashboard.html" };
+  const ROLE_HOME = { admin: "../admin/index.html", teacher: "../teacher/html/dashboard.html", student: "../student/dashboard.html" };
   const LOGIN_PAGE = "../auth/login.html";
   const EMAIL_RE = /^\S+@\S+\.\S+$/;
 
